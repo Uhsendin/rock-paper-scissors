@@ -3,9 +3,9 @@ let computerScore = 0;
 const rockBtn = document.getElementById("btn1");
 const paperBtn = document.getElementById("btn2");
 const scissorsBtn = document.getElementById("btn3");
-const resultsDiv = document.getElementById("results");
-const divComp = document.getElementById("resultscomp");
-const finalWinner = document.getElementById("final-winner")
+const playerScoreDom = document.getElementById("results");
+const computerScoreDom = document.getElementById("resultscomp");
+const roundWinner = document.getElementById("final-winner")
 
 function getComputerChoice() {
   const answerChoices = ["rock", "paper", "scissors"];
@@ -51,8 +51,8 @@ function game() {
   let computerSelection = getComputerChoice();
 
   (playRound(playerSelection, computerSelection));
-  resultsDiv.innerHTML = "Human's Score" + " "+ playerScore;
-  divComp.innerHTML = "Computer's Score" + " " + computerScore;
+  playerScoreDom.innerHTML = "Human's Score" + " "+ playerScore;
+  computerScoreDom.innerHTML = "Computer's Score" + " " + computerScore;
   if (playerScore > computerScore) {
         return "You win!";
       } else if (playerScore < computerScore) {
