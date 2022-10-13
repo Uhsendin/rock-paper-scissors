@@ -55,14 +55,26 @@ function game() {
   computerScoreDom.innerHTML = "Computer's Score" + " " + computerScore;
   if (playerScore === 5) {
         gameWinner.innerHTML = "Game over! You win!";
+        stopGame()
   } else if (computerScore === 5) {
     gameWinner.innerHTML = "Game over! You lose!"
+    stopGame()
   } else if (playerScore === 5 || computerScore === 5) {
     gameWinner.innerHTML = "Game over! You tied!"
+    stopGame()
   }
 }
+
+function stopGame() {
+  rockBtn.classList.add("disabled")
+  rockBtn.setAttribute("disabled", "disabled")
+  paperBtn.classList.add("disabled")
+  paperBtn.setAttribute("disabled", "disabled")
+  scissorsBtn.classList.add("disabled")
+  scissorsBtn.setAttribute("disabled", "disabled")
+}
   
-  //   //   console.log(game());
+  
 
 rockBtn.addEventListener("click", () => {
   playerSelection = "rock";
