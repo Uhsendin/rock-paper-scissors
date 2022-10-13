@@ -7,6 +7,7 @@ const playerScoreDom = document.getElementById("results");
 const computerScoreDom = document.getElementById("resultscomp");
 const roundWinner = document.getElementById("final-winner")
 const gameWinner = document.getElementById("game-winner")
+const restartBtn = document.getElementById("btn-restart")
 
 function getComputerChoice() {
   const answerChoices = ["rock", "paper", "scissors"];
@@ -73,7 +74,13 @@ function stopGame() {
   scissorsBtn.classList.add("disabled")
   scissorsBtn.setAttribute("disabled", "disabled")
 }
-  
+ 
+function restartGame() {
+  playerScore = 0
+  computerScore = 0
+  window.location.reload(true)
+}
+
   
 
 rockBtn.addEventListener("click", () => {
@@ -90,3 +97,5 @@ scissorsBtn.addEventListener("click", () => {
   playerSelection = "scissors";
   game();
 });
+
+restartBtn.addEventListener("click", restartGame)
